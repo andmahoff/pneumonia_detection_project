@@ -39,8 +39,10 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
 
 ![Confusion Matrix]
+<div align="center">
 <img width="528" height="547" alt="Confusion Matrix" src="https://github.com/user-attachments/assets/4432f345-e2eb-4e8e-9116-6a000e20ab1b" />
-
+<i>Figure showing the confusion matrix result for the model created in this project</i>
+<div align="left">
 
 ## 🧠 Explainable AI (Grad-CAM)
 To ensure the model isn't "cheating" by looking at artifacts (like text labels or bone structures), I implemented **Grad-CAM (Gradient-weighted Class Activation Mapping)**.
