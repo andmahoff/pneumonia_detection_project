@@ -35,7 +35,7 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 | **Recall (Sensitivity)** | **87.0%** |
 | **Precision** | **89.0%** |
 
-### ![Confusion Matrix]
+### ![Confusion Matrix]()
 The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
 
 <div align="center">
@@ -44,12 +44,11 @@ The model demonstrates a strong ability to distinguish between infected and heal
 <i>Figure showing the confusion matrix for the model created in this project.</i>
 <div align="left">
 
-## 🧠 Explainable AI (Grad-CAM)
+## 🧠 ![Explainable AI (Grad-CAM)]()
 To ensure the model isn't "cheating" by looking at artifacts (like text labels or bone structures), I implemented **Grad-CAM (Gradient-weighted Class Activation Mapping)**.
 
 The heatmap below shows the model focusing heavily on the lung opacity (cloudiness), confirming it is learning clinically relevant features.
 
-![Grad-CAM Visualization](URL_TO_YOUR_GRADCAM_IMAGE)
 <div align="center">
 <img width="950" height="315" alt="CMAP graph" src="https://github.com/user-attachments/assets/3ecfbc26-93a6-4fc6-bb1d-e8a28049b358" />
 <div align="center">
