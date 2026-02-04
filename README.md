@@ -40,8 +40,8 @@ The model demonstrates a strong ability to distinguish between infected and heal
 
 ![Confusion Matrix]
 <div align="center">
-<img width="528" height="547" alt="Confusion Matrix" src="https://github.com/user-attachments/assets/4432f345-e2eb-4e8e-9116-6a000e20ab1b" />
-<i>Figure showing the confusion matrix result for the model created in this project</i>
+    <img width="528" height="547" alt="Confusion Matrix" src="https://github.com/user-attachments/assets/4432f345-e2eb-4e8e-9116-6a000e20ab1b" />
+    <i>Figure showing the confusion matrix result for the model created in this project</i>
 <div align="left">
 
 ## 🧠 Explainable AI (Grad-CAM)
