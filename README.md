@@ -23,12 +23,8 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
     - Normalization (pixel values rescaled to 0-1).
     - **Data Augmentation** (rotation, zoom, flips) applied to training data to prevent overfitting. Test data was not augmented.
 2.  **Model Architecture:**
-    **VGG16**
-    - **Base:** VGG16 with pretrained weights from training on the ImageNet database was used. The VGG16 layers frozen were frozen. 
-    - **Head:** A custom head was added to the model to adapt the pre-trained model feature extraction capabilities to the new pneumonia dataset. The custom head included a GlobalAveragePooling2D layer, a 128 node dense layer, a dropout layer (0.5) to prevent overfitting and a dense sigmoid activation final output layer.
-    **DenseNet121**
-    - **Base:**
-    - **Head:** 
+    - **Base:** For both models, pretrained weights from training on the ImageNet database were used. The layers of both models were frozen. 
+    - **Head:** A custom head was added to both models to adapt the pre-trained model feature extraction capabilities to the new pneumonia dataset. The custom heads included a GlobalAveragePooling2D layer, a 128 node dense layer, a dropout layer (0.5) to prevent overfitting and a dense sigmoid activation final output layer.
       
 4.  **Training Strategy:**
     - Used **Class Weights** to handle the imbalance between 'Pneumonia' (majority) and 'Normal' (minority) classes.
@@ -36,8 +32,8 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
     - Loss Function: Binary Crossentropy.
     - Trained base models for 10 epochs and finetuned models for 5 epochs.
 5. **Finetuning:**
-    - The last block in VGG16 (Block 5) was finetuned as it contains the most abstract and semantic info.
-    - A low learning rate of 1 * 10<sup>-5</sup> was used for both models.
+    - The last block in VGG16 (Block 5) was finetuned. The last 50 layers were finetuned in DenseNet121.
+    - A low learning rate of 1 * 10<sup>-6</sup> was used for both models. VGG16 was also finetuned with a learning rate of 1 * 10<sup>-5</sup>.
 
 ## 📊 Key Results
 | Metric | Score |
