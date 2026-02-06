@@ -36,6 +36,7 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
     - A low learning rate of 1 * 10<sup>-6</sup> was used for both models. VGG16 was also finetuned with a learning rate of 1 * 10<sup>-5</sup>.
 
 ## 📊 Key Results
+<div align="center">
 | Model Architecture | Status | Accuracy | Recall (Sensitivity) |
 | :--- | :--- | :--- | :--- |
 | **VGG16** | Base (Frozen) | *84 %* | *83 %* |
@@ -44,9 +45,8 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 | **DenseNet121** | Base (Frozen) | *89 %* | *92 %* |
 | **DenseNet121** | Fine-Tuned | *90 %* | *92 %* |
 
-> **Note:**
-> * **Accuracy**: The percentage of total correct predictions.
-> * **Recall**: The percentage of actual Pneumonia cases successfully detected.
+<i>Table showing the accuracy and recall values for each model model created in this project. Accuracy is the percentage of total correct predictions and recall is the percentage of actual pneumonia cases successfully detected</i>
+<div align="left">
 
 ### ![Confusion Matrix]()
 The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
