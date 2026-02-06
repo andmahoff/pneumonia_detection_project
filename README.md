@@ -35,7 +35,7 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
     - The last block in VGG16 (Block 5) was finetuned. The last 50 layers were finetuned in DenseNet121.
     - A low learning rate of 1 * 10<sup>-6</sup> was used for both models. VGG16 was also finetuned with a learning rate of 1 * 10<sup>-5</sup>.
 
-## 📊 Key Results
+## 📊 Findings
 <div align="center">
 
 | Model Architecture | Status | Accuracy | Recall (Sensitivity) |
@@ -49,6 +49,16 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 <i>Table showing the accuracy and recall values for each model model created in this project. Accuracy is the percentage of total correct predictions and recall is the percentage of actual pneumonia cases. successfully detected</i>
 <div align="left">
 
+- Overall, models based on the DenseNet121 models have higher accuracy and recall values then the models based on the VGG16 architecture.
+- The Finetuned DenseNet121 model had the best scores overall.
+- The more gently finetuned VGG16 model had better results than the more extremely finetuned model. This shows the importance of not over-finetuning. Finetuning had a greater effect in improving the VGG16 rather than the DenseNet121 model.
+
+<div align="center">
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/c604c00c-2af5-4429-8c7c-bd7dd4197c5d" />
+   <div align="center">
+<i>Table showing the recall and accuracy values for the VGG16 based models.</i>
+<div align="left">
+    
 ### ![Confusion Matrix]()
 The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
 
