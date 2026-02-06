@@ -46,7 +46,7 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 | **DenseNet121** | Base (Frozen) | *89 %* | *92 %* |
 | **DenseNet121** | Fine-Tuned | *90 %* | *92 %* |
 
-<i>Table showing the accuracy and recall values for each model model created in this project. Accuracy is the percentage of total correct predictions and recall is the percentage of actual pneumonia cases successfully detected</i>
+<i>Table showing the accuracy and recall values for each model model created in this project. Accuracy is the percentage of total correct predictions and recall is the percentage of actual pneumonia cases. successfully detected</i>
 <div align="left">
 
 ### ![Confusion Matrix]()
