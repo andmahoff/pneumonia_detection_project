@@ -39,8 +39,8 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 | Model Architecture | Status | Accuracy | Recall (Sensitivity) |
 | :--- | :--- | :--- | :--- |
 | **VGG16** | Base (Frozen) | *84 %* | *83 %* |
-| **VGG16** | *Fine-Tuned (10<sup>-6</sup>)* | *85 %* | *85 %* |
-| **VGG16** | *Fine-Tuned (10<sup>-5</sup>)* | *89 %* | *91 %* |
+| **VGG16** | Fine-Tuned (10<sup>-6</sup>) | *85 %* | *85 %* |
+| **VGG16** | Fine-Tuned (10<sup>-5</sup>) | *89 %* | *91 %* |
 | **DenseNet121** | Base (Frozen) | *89 %* | *92 %* |
 | **DenseNet121** | Fine-Tuned | *90 %* | *92 %* |
 
