@@ -7,7 +7,9 @@ Repository for my pneumonia detection project
 ![VGG16](https://img.shields.io/badge/Model-VGG16-green?style=flat-square)
 
 ## 📌 Project Overview
-Pneumonia is a life-threatening condition that requires rapid and accurate diagnosis. Radiologists face high workloads, increasing the risk of fatigue-related errors. This project implements a **Convolutional Neural Network (CNN)** based on the **VGG16** architecture to automatically detect pneumonia from chest X-ray images, serving as a potential decision-support tool for medical professionals.
+Pneumonia is a life-threatening condition that requires rapid and accurate diagnosis. It is responsible for 14% of deaths of children under the age of 5 and it is one of the major causes of death in both infants and elderly people. It is more common in poorer countries with high overcrowding and levels of pollution.
+In this project, machine learning models were made to automatically detect pneumonia from chest X-ray images using the **VGG16** and **DenseNet121**  **Convolutional Neural Networks (CNN)s**. These two models were then compared to see which performed. Finetuning of the final layers of each model architecture was also undertaken.
+A successful model to automatically detect pneumonia could help as a potential decision-support tool for medical professionals in detecting pneumonia faster. This would be especially helpful in poorer countries where pneuomia is more prevalent whilst the number of healthcare professionals is more limited.
 
 ## 📂 Dataset
 The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia).
