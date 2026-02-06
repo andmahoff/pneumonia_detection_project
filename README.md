@@ -21,14 +21,23 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 1.  **Data Preprocessing:**
     - Resizing to 224x224 (standard input for VGG16).
     - Normalization (pixel values rescaled to 0-1).
-    - **Data Augmentation** (rotation, zoom, flips) applied to training data to prevent overfitting.
+    - **Data Augmentation** (rotation, zoom, flips) applied to training data to prevent overfitting. Test data was not augmented.
 2.  **Model Architecture:**
-    - **Base:** Pre-trained VGG16 (weights from ImageNet) with layers frozen.
-    - **Head:** Custom fully connected layers (GlobalAveragePooling -> Dense(128) -> Dropout(0.5) -> Sigmoid).
-3.  **Training Strategy:**
+    **VGG16**
+    - **Base:** VGG16 with pretrained weights from training on the ImageNet database was used. The VGG16 layers frozen were frozen. 
+    - **Head:** A custom head was added to the model to adapt the pre-trained model feature extraction capabilities to the new pneumonia dataset. The custom head included a GlobalAveragePooling2D layer, a 128 node dense layer, a dropout layer (0.5) to prevent overfitting and a dense sigmoid activation final output layer.
+    **DenseNet121**
+    - **Base:**
+    - **Head:** 
+      
+4.  **Training Strategy:**
     - Used **Class Weights** to handle the imbalance between 'Pneumonia' (majority) and 'Normal' (minority) classes.
     - Optimizer: Adam (LR=0.0001).
     - Loss Function: Binary Crossentropy.
+    - Trained base models for 10 epochs and finetuned models for 5 epochs.
+5. **Finetuning:**
+    - The last block in VGG16 (Block 5) was finetuned as it contains the most abstract and semantic info.
+    - A low learning rate of 1 * 10<sup>-5</sup> was used for both models.
 
 ## 📊 Key Results
 | Metric | Score |
