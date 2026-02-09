@@ -91,10 +91,9 @@ The same X-ray image was used for each model Grad-CAM for consistency. Grad-CAM 
 <div align="left">
 <br>
 
-
-The heatmap below shows the model focusing heavily on the lung opacity (cloudiness), confirming it is learning clinically relevant features.
-
-
+The VGG16 models focused heavily on the lung opacity (cloudiness), confirming that the model was looking at the clinically relevant features. There was also a big upgrade from the non-refined to refined model with the refined model looking a lot more heavily at the cloudy parts of the lungs corresponding to pneumonia.
+The DenseNet121 models on the otherhand focused on a proxy feature of pneumonia, the ribs. When lungs fill up with fluid, they can become expanded which pushes the ribs further apart. This is a very risky way of looking for penumonia as it does not account for if a person has a broken rib or another chest deformity. It is also not the standard way of looking for pneumonia in X-rays, with radiologists looking at lung opacity to test for it. The refined DenseNet model also shows a complete change in focus compared to the unrefined DenseNet model which is hard to explain.
+Overall, the DenseNet models are a lot less explainable as well as understandable for medical professionals. Exlplainable AI in healthcare is very important in healthcare to make sure that the AI does not amplify pre-exisitng biases.
     
 ### ![Confusion Matrix]()
 The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
