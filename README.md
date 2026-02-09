@@ -68,28 +68,28 @@ The same X-ray image was used for each model Grad-CAM for consistency. Grad-CAM 
 <div align="center">
 <i>Figure showing the Grad-CAM heatmap for the VGG16 model without any finetuning created in this project.</i>
 <div align="left">
-
+\n
 
 <div align="center">
 <img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/4ad4d0f2-c047-43e5-ada4-dec68130b10c" />
 <div align="center">
 <i>Figure showing the Grad-CAM heatmap for the VGG16 model with gentle (10<sup>-5</sup>) finetuning created in this project.</i>
 <div align="left">
-
+\n
 
 <div align="center">
 <img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/bb579f0e-b545-4fad-b80f-a90d84ca5082" />
 <div align="center">
 <i>Figure showing the Grad-CAM heatmap for the DenseNet121 model without any finetuning created in this project.</i>
 <div align="left">
-
+\n
 
 <div align="center">
 <img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/8fa815de-95f8-4e3b-9343-22f6c53fd62b" />
 <div align="center">
 <i>Figure showing the Grad-CAM heatmap for the DenseNet121 model with gentle (10<sup>-5</sup>) finetuning created in this project.</i>
 <div align="left">
-
+\n
 
 
 The heatmap below shows the model focusing heavily on the lung opacity (cloudiness), confirming it is learning clinically relevant features.
