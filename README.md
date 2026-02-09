@@ -35,7 +35,7 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
     - The last block in VGG16 (Block 5) was finetuned. The last 50 layers were finetuned in DenseNet121.
     - A low learning rate of 1 * 10<sup>-6</sup> was used for both models. VGG16 was also finetuned with a learning rate of 1 * 10<sup>-5</sup>.
 
-## 📊 Findings
+## 📊 Analysis
 <div align="center">
 
 | Model Architecture | Status | Accuracy | Recall (Sensitivity) |
@@ -96,18 +96,42 @@ The DenseNet121 models on the otherhand focused on a proxy feature of pneumonia,
 Overall, the DenseNet models are a lot less explainable as well as understandable for medical professionals. Exlplainable AI in healthcare is very important in healthcare to make sure that the AI does not amplify pre-exisitng biases.
     
 ### ![Comparing Model Accuracy and Loss Over Time]()
-The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
 
 <div align="center">
 <img width="1589" height="590" alt="image" src="https://github.com/user-attachments/assets/8f4997a3-6d07-48df-a66b-971eaa9a2096" />
     <div align="center">
 <i>Figure showing the accuracy and loss comparison over time for the gently refined VGG16 and DenseNet121 models.</i>
 <div align="left">
+<br>
+The validation dataset only contained 16 images and was very small, so the validation accuracy and loss values contained large swings and were not very valuable for analysis. The refined DenseNet model had better accuracy and lower loss for the train dataset. However, values were very similar. <br>
+The VGG16 saw significant improvement during the refinement epochs whilst the DenseNet model saw barely any change. Therefore, there is a chance that with better refinement, the VGG16 model could be improved to be better than the DenseNet model.
 
+### ![Comparing Model Confusion Plots]()
 
+<div align="center">
+<img width="528" height="547" alt="image" src="https://github.com/user-attachments/assets/25e9673b-21e9-41a7-a885-dfe056055338" />
+    <div align="center">
+<i>Figure showing the confusion plot for the gently refined VGG16 model.</i>
+<div align="left">
+<br>
+<div align="center">
+<img width="687" height="552" alt="image" src="https://github.com/user-attachments/assets/432212de-1f89-4dfe-91aa-ff704ec2fa14" />
+    <div align="center">
+<i>Figure showing the confusion plot for the gently refined DenseNet121 model.</i>
+<div align="left">
+<br>
 
+Overall, the DenseNet model showed better recall. However, the difference between both models was very small.
 
-## 💡 Challenges Overcome
+## 💡 Key Findings
+- The gently refined models were better than the more heavily refined models or the non-refined models.
+- The gently refined VGG16 model had 89% and 91% recall. The gently refined DenseNet121 model had 90% accuracy and 92% recall. 
+- The DenseNET models perfomed better tha the VGG16 ones with higher accuracy, recall, and lower loss.
+- From the Grad-CAM heatmaps, it was found that the DenseNet models were a lot less explainable than the VGG16 models. The VGG16 models focused on lung opacity which the clinical standard way of checking for pneumonia whilst DenseNet took the more risky approach of looking at the ribs.
+- The VGG16 models saw significant improvement in their gentle refinement models whilst DenseNet saw very small improvement. Therefore, it has been hypothesised that with better refinement, the VGG16 models would perform better than the DenseNet models.
+- Overall, it was decided that VGG16 was the better CNN to be used in active learning to create models to detect for pneumonia in X-rays. This is due to the importance of explainability in healthcare in AI. The VGG16 models were only slightly worse in accuracy than DenseNet and showed a mcuh larger improvement in refinement, supporting the fact that with better refinement, they would have accuracy than the DenseNet models. 
+
+## Challenges Overcome
 **The "Shuffling" Bug:**
 During the initial evaluation, the test accuracy dropped unexpectedly to ~54% (near random guessing). Upon debugging, I discovered that the standard Keras `flow_from_directory` method shuffles data by default. This caused a mismatch between the model's predictions and the ordered list of ground truth labels.
 * **Fix:** Re-initialized the test generator with `shuffle=False` to align predictions with true labels, restoring accuracy to 85.3%.
