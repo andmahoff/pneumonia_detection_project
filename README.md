@@ -19,7 +19,7 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
 
 ## ⚙️ Methodology
 1.  **Data Preprocessing:**
-    - Resizing to 224x224 (standard input for VGG16).
+    - Resized to 224x224 (standard input for VGG16).
     - Normalization (pixel values rescaled to 0-1).
     - **Data Augmentation** (rotation, zoom, flips) applied to training data to prevent overfitting. Test data was not augmented.
 2.  **Model Architecture:**
@@ -58,6 +58,44 @@ The dataset was obtained from [Kaggle: Chest X-Ray Images (Pneumonia)](https://w
    <div align="center">
 <i>Table showing the recall and accuracy values for the VGG16 based models.</i>
 <div align="left">
+
+# 🧠 ![Explainable AI (Grad-CAM)]()
+To improve the explainability of the models and to make sure that the models were looking at the right features, **Grad-CAM (Gradient-weighted Class Activation Mapping)** was used on all the models.
+The same X-ray image was used for each model Grad-CAM for consistency. Grad-CAM creates a heatmap with the areas of the image were the model focused on in red, and where it did not in blue.
+
+<div align="center">
+<img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/ff096e7c-668d-412e-9661-12209da66a38" />
+<div align="center">
+<i>Figure showing the Grad-CAM heatmap for the VGG16 model without any finetuning created in this project.</i>
+<div align="left">
+
+<div align="center">
+<img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/4ad4d0f2-c047-43e5-ada4-dec68130b10c" />
+<div align="center">
+<i>Figure showing the Grad-CAM heatmap for the VGG16 model with gentle (10<sup>-5</sup>) finetuning created in this project.</i>
+<div align="left">
+
+<div align="center">
+<img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/bb579f0e-b545-4fad-b80f-a90d84ca5082" />
+<div align="center">
+<i>Figure showing the Grad-CAM heatmap for the DenseNet121 model without any finetuning created in this project.</i>
+<div align="left">
+
+<div align="center">
+<img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/8fa815de-95f8-4e3b-9343-22f6c53fd62b" />
+<div align="center">
+<i>Figure showing the Grad-CAM heatmap for the DenseNet121 model with gentle (10<sup>-5</sup>) finetuning created in this project.</i>
+<div align="left">
+
+
+
+The heatmap below shows the model focusing heavily on the lung opacity (cloudiness), confirming it is learning clinically relevant features.
+
+<div align="center">
+<img width="950" height="315" alt="CMAP graph" src="https://github.com/user-attachments/assets/3ecfbc26-93a6-4fc6-bb1d-e8a28049b358" />
+<div align="center">
+<i>Figure showing the Grad-CAM heatmap for the model created in this project.</i>
+<div align="left">
     
 ### ![Confusion Matrix]()
 The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
@@ -68,16 +106,7 @@ The model demonstrates a strong ability to distinguish between infected and heal
 <i>Figure showing the confusion matrix for the model created in this project.</i>
 <div align="left">
 
-## 🧠 ![Explainable AI (Grad-CAM)]()
-To ensure the model isn't "cheating" by looking at artifacts (like text labels or bone structures), I implemented **Grad-CAM (Gradient-weighted Class Activation Mapping)**.
 
-The heatmap below shows the model focusing heavily on the lung opacity (cloudiness), confirming it is learning clinically relevant features.
-
-<div align="center">
-<img width="950" height="315" alt="CMAP graph" src="https://github.com/user-attachments/assets/3ecfbc26-93a6-4fc6-bb1d-e8a28049b358" />
-<div align="center">
-<i>Figure showing the Grad-CAM heatmap for the model created in this project.</i>
-<div align="left">
 
 
 ## 💡 Challenges Overcome
