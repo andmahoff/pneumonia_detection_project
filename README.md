@@ -66,42 +66,42 @@ The same X-ray image was used for each model Grad-CAM for consistency. Grad-CAM 
 <div align="center">
 <img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/ff096e7c-668d-412e-9661-12209da66a38" />
 <div align="center">
-<i>Figure showing the Grad-CAM heatmap for the VGG16 model without any finetuning created in this project.</i>
+<i>Figure showing the Grad-CAM heatmap for the VGG16 model without any finetuning.</i>
 <div align="left">
 <br>
 
 <div align="center">
 <img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/4ad4d0f2-c047-43e5-ada4-dec68130b10c" />
 <div align="center">
-<i>Figure showing the Grad-CAM heatmap for the VGG16 model with gentle (10<sup>-5</sup>) finetuning created in this project.</i>
+<i>Figure showing the Grad-CAM heatmap for the VGG16 model with gentle (10<sup>-5</sup>) finetuning.</i>
 <div align="left">
 <br>
 
 <div align="center">
 <img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/bb579f0e-b545-4fad-b80f-a90d84ca5082" />
 <div align="center">
-<i>Figure showing the Grad-CAM heatmap for the DenseNet121 model without any finetuning created in this project.</i>
+<i>Figure showing the Grad-CAM heatmap for the DenseNet121 model without any finetuning.</i>
 <div align="left">
 <br>
 
 <div align="center">
 <img width="950" height="315" alt="image" src="https://github.com/user-attachments/assets/8fa815de-95f8-4e3b-9343-22f6c53fd62b" />
 <div align="center">
-<i>Figure showing the Grad-CAM heatmap for the DenseNet121 model with gentle (10<sup>-5</sup>) finetuning created in this project.</i>
+<i>Figure showing the Grad-CAM heatmap for the DenseNet121 model with gentle (10<sup>-5</sup>) finetuning.</i>
 <div align="left">
 <br>
 
-The VGG16 models focused heavily on the lung opacity (cloudiness), confirming that the model was looking at the clinically relevant features. There was also a big upgrade from the non-refined to refined model with the refined model looking a lot more heavily at the cloudy parts of the lungs corresponding to pneumonia.
-The DenseNet121 models on the otherhand focused on a proxy feature of pneumonia, the ribs. When lungs fill up with fluid, they can become expanded which pushes the ribs further apart. This is a very risky way of looking for penumonia as it does not account for if a person has a broken rib or another chest deformity. It is also not the standard way of looking for pneumonia in X-rays, with radiologists looking at lung opacity to test for it. The refined DenseNet model also shows a complete change in focus compared to the unrefined DenseNet model which is hard to explain.
+The VGG16 models focused heavily on the lung opacity (cloudiness), confirming that the model was looking at the clinically relevant features. There was also a big upgrade from the non-refined to refined model with the refined model looking a lot more heavily at the cloudy parts of the lungs corresponding to pneumonia. <br>
+The DenseNet121 models on the otherhand focused on a proxy feature of pneumonia, the ribs. When lungs fill up with fluid, they can become expanded which pushes the ribs further apart. This is a very risky way of looking for penumonia as it does not account for if a person has a broken rib or another chest deformity. It is also not the standard way of looking for pneumonia in X-rays, with radiologists looking at lung opacity to test for it. The refined DenseNet model also shows a complete change in focus compared to the unrefined DenseNet model which is hard to explain. <br>
 Overall, the DenseNet models are a lot less explainable as well as understandable for medical professionals. Exlplainable AI in healthcare is very important in healthcare to make sure that the AI does not amplify pre-exisitng biases.
     
-### ![Confusion Matrix]()
+### ![Comparing Model Accuracy and Loss Over Time]()
 The model demonstrates a strong ability to distinguish between infected and healthy lungs, with a priority on minimizing False Negatives (missed cases).
 
 <div align="center">
-<img width="528" height="547" alt="Confusion Matrix" src="https://github.com/user-attachments/assets/4432f345-e2eb-4e8e-9116-6a000e20ab1b" />
+<img width="1589" height="590" alt="image" src="https://github.com/user-attachments/assets/8f4997a3-6d07-48df-a66b-971eaa9a2096" />
     <div align="center">
-<i>Figure showing the confusion matrix for the model created in this project.</i>
+<i>Figure showing the accuracy and loss comparison over time for the gently refined VGG16 and DenseNet121 models.</i>
 <div align="left">
 
 
