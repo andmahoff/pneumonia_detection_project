@@ -139,7 +139,7 @@ During the initial evaluation, the test accuracy dropped unexpectedly to ~54% (n
 ## Instructions for Downloading and Running the Project Code
 1.  **Downloading the Project Code:**
 
-   Download the project code from [`pneumonia_project_folder`](https://github.com/andmahoff/pneumonia_detection_project/tree/main/pneumonia_project_folder/code) and save it.
+   Download the project code from the [`pneumonia_project_folder`](https://github.com/andmahoff/pneumonia_detection_project/tree/main/pneumonia_project_folder/code) and save it.
 
 2.   **Getting API key:**
 
