@@ -140,8 +140,10 @@ During the initial evaluation, the test accuracy dropped unexpectedly to ~54% (n
 1.  **Downloading the Project Code:**
 
    Download the project code from [`pneumonia_project_folder`](https://github.com/andmahoff/pneumonia_detection_project/tree/main/pneumonia_project_folder/code) and save it.
-2.  **Getting API key:**
+
+2.   **Getting API key:**
 Remember to get your API key and save it to your google drive in the file location /content/drive/MyDrive/Kaggle. More information on how to get your Kaggle API key can be found on the [`kaggle website`](https://www.kaggle.com/). You can change the location of the kaggle key in your google drive but remember to also change the corresponding code in the script.
+
 3.  **Run the Code!!:**
 Run the code in Google Collab.
 
