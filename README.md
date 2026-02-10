@@ -136,11 +136,14 @@ Overall, the DenseNet model showed better recall. However, the difference betwee
 During the initial evaluation, the test accuracy dropped unexpectedly to ~54% (near random guessing). Upon debugging, I discovered that the standard Keras `flow_from_directory` method shuffles data by default. This caused a mismatch between the model's predictions and the ordered list of ground truth labels.
 * **Fix:** Re-initialized the test generator with `shuffle=False` to align predictions with true labels, restoring accuracy to 85.3%.
 
-## 🚀 How to Run
-1.  Clone the repository.
-2.  Install dependencies: `pip install tensorflow numpy matplotlib seaborn opencv-python`.
-3.  Download the dataset from Kaggle and place it in the root directory.
-4.  Run the Jupyter Notebook `Pneumonia_Detection.ipynb`.
+## Instructions for Downloading and Running the Project Code
+1.  **Downloading the Project Code:**
+
+   Download the project code from [`pneumonia_project_folder`](https://github.com/andmahoff/pneumonia_detection_project/tree/main/pneumonia_project_folder/code) and save it.
+2.  **Getting API key:**
+Remember to get your API key and save it to your google drive in the file location /content/drive/MyDrive/Kaggle. More information on how to get your Kaggle API key can be found on the [`kaggle website`](https://www.kaggle.com/). You can change the location of the kaggle key in your google drive but remember to also change the corresponding code in the script.
+3.  **Run the Code!!:**
+Run the code in Google Collab.
 
 ---
 *Created by Andrzej Machowski*
